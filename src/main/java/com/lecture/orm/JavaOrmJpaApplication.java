@@ -9,6 +9,15 @@ public class JavaOrmJpaApplication {
 
     public static void main(String[] args) {
 
+        /**
+         * 영속성 컨텍스트 이점
+         * 1. 1차 캐시
+         * 2. 동일성 보장
+         * 3. 트랜잭션을 지원하는 쓰기 지연
+         * 4. 변경 감지
+         * 5. 지연 로딩
+         */
+
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
         EntityManager em = emf.createEntityManager();
 
@@ -25,7 +34,7 @@ public class JavaOrmJpaApplication {
             em.persist(member2);
 
             // 준영속 상태로 변경 (JPA 에서 관리하지 않는 상태)
-            em.detach(member2);
+            em.detach(member2); // 영속성 컨텍스트에서 분리
 //            em.clear(); // 영속성 컨텍스트 완전 초기화
 //            em.close(); // 영속성 컨텍스트 종료
 
