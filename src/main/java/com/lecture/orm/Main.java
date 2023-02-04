@@ -25,8 +25,8 @@ public class Main {
 
         try {
             // 비영속
-            Member member1 = new Member();
-            Member member2 = new Member();
+            User member1 = new User();
+            User member2 = new User();
 
             // create, 영속
             em.persist(member1);
@@ -41,7 +41,7 @@ public class Main {
             em.flush();
 
             // read
-            Member foundMember = em.find(Member.class, 1L);
+            User foundMember = em.find(User.class, 1L);
 
             // update (변경 감지)
             // foundMember.setName("C"); // 별도 setter 메소드 필요
@@ -51,7 +51,7 @@ public class Main {
 
             // JPQL 실행 (실행 시 강제 플러시)
             // 쿼리 조회 -> "객체"로 조회 : List<Member>
-            em.createQuery("select m from Member as m", Member.class)
+            em.createQuery("select m from Member as m", User.class)
                     .setFirstResult(5)
                     .setMaxResults(8)
                     .getResultList();

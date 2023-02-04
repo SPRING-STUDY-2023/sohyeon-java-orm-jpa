@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
-public class Member {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -42,6 +42,6 @@ public class Member {
     @Transient // 객체 내에서만 사용 (테이블 칼럼 X)
     private int temp;
 
-    public Member() {
+    public User() {
     }
 }
