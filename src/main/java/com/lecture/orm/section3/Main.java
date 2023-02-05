@@ -1,5 +1,6 @@
-package com.lecture.orm;
+package com.lecture.orm.section3;
 
+import com.lecture.orm.section4.User;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;

@@ -1,5 +1,6 @@
-package com.lecture.orm;
+package com.lecture.orm.section4;
 
+import com.lecture.orm.section4.RoleType;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
