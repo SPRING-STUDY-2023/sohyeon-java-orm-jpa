@@ -1,4 +1,4 @@
-package com.lecture.orm.exam.domain;
+package com.lecture.orm.section10;
 
 import jakarta.persistence.*;
 
@@ -6,19 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Member extends BaseEntity {
+public class Team {
 
     @Id @GeneratedValue
-    @Column(name = "MEMBER_ID")
     private Long id;
-
     private String name;
 
-    @Embedded
-    private Address address;
-
-    @OneToMany(mappedBy = "member")
-    private List<Order> orders = new ArrayList<>();
+    @OneToMany(mappedBy = "team")
+    private List<Member> members = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -34,13 +29,5 @@ public class Member extends BaseEntity {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
     }
 }
