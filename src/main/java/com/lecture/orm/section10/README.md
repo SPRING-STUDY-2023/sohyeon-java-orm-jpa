@@ -14,8 +14,8 @@
 - 별칭은 필수이다. (m, as는 생략 가능)
 
 ## 집합과 정렬
-![img.png](img.png)
-![img_1.png](img_1.png)
+![img.png](images/img.png)
+![img_1.png](images/img_1.png)
 
 ## TypeQuery, Query
 
@@ -62,25 +62,7 @@ em.createQuery("select m from Member m order by m.age desc", Member.class)
 ## 서브쿼리
 
 ### 서브쿼리 지원 함수
-![img_2.png](img_2.png)
+![img_2.png](images/img_2.png)
 
 ### JPA 서브 쿼리 한계
 - FROM 절의 서브 쿼리는 현재 JPQL에서 불가능하다. (> 조인으로 풀 수 있으면 조인으로 해결)
-
-<br/>
-
-## 경로 표현식
-
-### 경로 표현식 용어
-- 상태 필드: 단순히 값을 저장하기 위한 필드
-- 연관 필드: 연관관계를 위한 필
-
-### 경로 표현식 특징
-- 상태 필드: 경로 탐색의 끝, 더 이상 탐색할 수 없다.
-- 단일 값 연관 경로: 묵시적 내부 조인(inner join) 발생, 더 탐색할 수 있다.
-- 컬렉션 값 연관 경로: 묵시적 내부 조인 발생, 더 이상 탐색할 수 없다. (from 절에서 별칭을 얻으면 별칭으로 탐색 가능)
-- 묵시적 내부 조인이 발생하는 쿼리 권장 X
-
-### 명시적 조인 & 묵시적 조인
-- 명시적 조인: join 키워드 직접 사용함으로써 발생한다.
-- 묵시적 조인: 경로 표현식에 의해 묵시적으로 SQL 조인이 발생한다.
