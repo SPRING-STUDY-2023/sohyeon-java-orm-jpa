@@ -45,19 +45,19 @@
 1. Query 타입으로 조회
 2. Object[] 타입으로 조회
 3. new 명령어로 조회
-₩₩₩
+```
 List<MemberDTO> result = em.createQuery("select new jpql.memberDTO(m.username, m.age) from Member m", MemberDTO.class)
    .getResultList();
 MemberDTO memberDTO = result.get(0);
-₩₩₩
+```
 
 ## 페이징
-₩₩₩
+```
 em.createQuery("select m from Member m order by m.age desc", Member.class)
    .setFirstResult(0)
    .setMaxResults(10)
    .getResultList();
-₩₩₩
+```
 
 ## 서브쿼리
 
